@@ -1,0 +1,51 @@
+#VRML V1.0 ascii
+#Book
+
+DEF Book Separator{
+	Cylinder{
+		parts ALL
+		radius 0.25
+		height 3
+		}
+	Transform {
+		translation 0 0 -.1
+		}
+	Material {
+		diffuseColor 0 1 0
+		}
+
+Cube {
+		height 3
+		width 0.4
+		depth 2
+	}
+}
+
+Separator {
+	Transform {
+		translation 1.5 0 0
+			rotation 0 0 1 0.5
+			}
+	USE Book}
+
+Separator {
+	Transform {
+		translation 0.5 0 0
+		}
+	USE Book
+	}
+	
+Separator {
+	Transform {
+		translation -0.5 0 0
+		}
+	USE Book
+	}	
+
+Separator {
+	Transform {
+		translation -1.5 0 0
+			rotation 0 0 1 -0.5
+			}
+	USE Book}
+		
