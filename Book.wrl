@@ -1,32 +1,108 @@
 #VRML V1.0 ascii
 #Book
 
+DEF BookShelf Separator{
+
+DEF LowerShelf Separator {
+    
+    Transform {
+        translation 0 -1.5 -.8
+    }
+    Material {
+           diffuseColor 0.7 0.16 0.16
+    }
+    Texture2 {
+    filename "wood.jpg"
+    }
+    Cube {
+        height 0.2
+        width 6.4
+        depth 4.85
+    }
+
+}
+
+DEF Shelf Separator {
+    
+    Transform {
+        translation 0 .5 -3
+            rotation 0 1 0 1.57
+    }
+    
+    Material {
+           diffuseColor 0.7 0.16 0.16
+    }
+    Texture2 {
+    filename "wood.jpg"
+    }
+    Cube {
+		height 4
+		width 0.4
+		depth 6.5
+	}
+    
+    Material {
+        diffuseColor 1 0 0
+    }
+}
+
+Separator {
+	Transform {
+		translation 0 -.35 -.65
+        scaleFactor .7 .8 1
+        rotation 0 1 0 1.57
+		}
+	USE Shelf
+}
+
+Separator {
+    
+	Transform {
+		translation 0 -.35 -.65
+        scaleFactor .7 .8 1    
+        rotation 0 1 0 -1.57
+		}
+	USE Shelf
+}
+
 DEF Book Separator{
+	Material {
+		diffuseColor 5 1 0
+		}
+    Texture2 {
+    filename "book1.jpg"
+    }   
 	Cylinder{
 		parts ALL
 		radius 0.25
 		height 3
 		}
 	Transform {
-		translation 0 0 -.1
+		translation 0 0 -.87
 		}
 	Material {
-		diffuseColor 0 1 0
+		diffuseColor 0.6 0.8 0.9
+        shininess 0.9
 		}
-
-Cube {
+    Texture2 {
+    filename "book2.jpg"
+    }        
+    Cube {
 		height 3
 		width 0.4
 		depth 2
 	}
 }
 
+
+
 Separator {
 	Transform {
 		translation 1.5 0 0
 			rotation 0 0 1 0.5
 			}
-	USE Book}
+	USE Book
+    }
 
 Separator {
 	Transform {
@@ -47,5 +123,18 @@ Separator {
 		translation -1.5 0 0
 			rotation 0 0 1 -0.5
 			}
-	USE Book}
+	USE Book
+    }
+}   
+
+
+DEF moveLeft Translation {translation -6 0 0}
+USE BookShelf
+USE moveLeft
+USE BookShelf
+USE moveLeft
+USE BookShelf
+USE moveLeft
 		
+        
+    
